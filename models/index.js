@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 mongoose.set('debug', true);
-mongoose.connect('mongodb://127.0.0.1:3000/todo-api');
+mongoose.connect('mongodb://localhost:3000/todo-api');
 
 mongoose.Promise = Promise;
+
+module.exports.Todo = require('./todo')
 
