@@ -3,9 +3,12 @@ const router = express.Router();
 const db = require('../models')
 
 router.get('/', async (req, res) => {
-     // let todos = await db.Todo.find()
-    res.send('Hello')
-    // res.json(todos)
+    try {
+     let todos = await db.Todo.find()
+    res.status(200).json(todos)
+    } catch (e) {
+        res.send(e)
+    }
 });
 
 module.exports = router;
